@@ -14,7 +14,7 @@ export class AuthGuard implements CanActivate {
  * @Canactivate for check user is login or not 
  * @returns true if user is login else return false and navigae user to the login page
  */
-  canActivate() {
+  canActivate() :boolean {
     if (this.Authentication.isLogin()) {
       return true;
     } else {

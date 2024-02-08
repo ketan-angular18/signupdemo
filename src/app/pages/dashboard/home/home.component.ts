@@ -17,6 +17,7 @@ export class HomeComponent {
    */
   logout(): void {
     localStorage.removeItem('token')
+    alert('logout Sucessfully')
     this.route.navigate([''])
   }
 }

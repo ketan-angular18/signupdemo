@@ -14,7 +14,7 @@ export class LoginGuard implements CanActivate {
    * CanActivate for check user is logged in or not
    * @returns false if user is login and navigate user to the home screen else return true 
    */
-  canActivate() {
+  canActivate() :boolean {
     if (this.Authentication.isLogin()) {
       this.route.navigate(['dashboard/home']);
       return false;

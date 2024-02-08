@@ -57,7 +57,7 @@ export class SignupComponent {
   /**
    * @back method for back to the login page
    */
-  back() {
+  back() :void {
     this.locatin.back();
   }
 }
