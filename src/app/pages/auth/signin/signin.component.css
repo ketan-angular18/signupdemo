@@ -1,0 +1,21 @@
+.conatiner {
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 50px;
+  max-width: 750px;
+  border: 2px solid black;
+  padding: 10px;
+}
+
+.error {
+  color: red;
+}
+
+button {
+  margin-left: 10px;
+}
+
+.invalid-feedback {
+  display: block;
+  border-color: red;
+}

@@ -1,0 +1,37 @@
+<div class="conatiner">
+  <h1>Login Form</h1>
+  <form [formGroup]="loginForm">
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="usr">Email:</label>
+          <input type="text" formControlName="email" [(ngModel)]="logindata.email" placeholder="Enter email"
+            class="form-control" [ngClass]="{ 'is-invalid': submitted && formcontrol['email'].errors }" />
+          <div class="form-control" *ngIf="formcontrol['email'].errors?.['required']" class="invalid-feedback">
+            Please Email is required</div>
+          <div *ngIf="formcontrol['email'].errors?.['pattern']" class="invalid-feedback">
+            Invalid email format.
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <label for="usr">Password:</label>
+            <input type="password" formControlName="password" placeholder="Enter password"
+              [ngClass]="{ 'is-invalid': submitted && formcontrol['password'].errors }" class="form-control"
+              [(ngModel)]="logindata.password" />
+            <div class="form-control" *ngIf="formcontrol['password'].errors?.['required']" class="invalid-feedback">
+              Password is required</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+      <hr>
+      New to Platform ?<button type="button" class="btn btn-primary" routerLink="signup">Register</button>
+    </div>
+  </form>
+</div>

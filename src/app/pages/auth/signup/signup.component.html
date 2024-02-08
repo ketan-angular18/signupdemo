@@ -1,0 +1,43 @@
+<button mat-raised-button color="primary" id="back" (click)="back()">
+  <mat-icon>arrow_back</mat-icon> back to login
+</button>
+<div class="form-container mat-elevtion-z5">
+  <h1>Sign Up a New User!</h1>
+  <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Enter Email address</mat-label>
+      <input matInput formControlName="email" [(ngModel)]="signupData.email" />
+      <mat-error *ngIf="controls['email']?.errors?.['required']">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="controls['email']?.errors?.['email']">
+        Please enter a correct email format
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter Password</mat-label>
+      <input matInput formControlName="password" type="password" [(ngModel)]="signupData.password" />
+      <mat-error *ngIf="controls['password']?.errors?.['required']">
+        Password is required
+      </mat-error>
+      <mat-error *ngIf="controls['password']?.errors?.['minlength']">
+        Password Must be 5 Character long
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter Confirm Password</mat-label>
+      <input matInput formControlName="confirmPassword" type="password" />
+      <mat-error *ngIf="controls['confirmPassword']?.errors?.['required']">
+        Confirm Password is required
+      </mat-error>
+      <mat-error *ngIf="controls['confirmPassword']?.errors?.['passwordDontmatch']">
+        Passwords should not match
+      </mat-error>
+    </mat-form-field>
+    <div class="center margin-top">
+      <button mat-raised-button color="primary" type="submit">
+        Sign Up!
+      </button>
+    </div>
+  </form>
+</div>
