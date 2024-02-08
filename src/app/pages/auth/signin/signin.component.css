@@ -14,8 +14,3 @@
 button {
   margin-left: 10px;
 }
-
-.invalid-feedback {
-  display: block;
-  border-color: red;
-}

@@ -54,6 +54,7 @@ export class SignInComponent implements OnInit {
    */
   login(): void {
     if (this.loginForm.invalid) {
+      this.submitted=true
       return;
     } else {
       this.auth
