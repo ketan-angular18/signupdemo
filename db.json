@@ -1,124 +1,166 @@
 {
-  "signupUsersList": [
-    {
-      "id": "f54d",
-      "username": "newUsername",
-      "email": "newuser@example.com",
-      "password": "hashedPassword"
-    },
-    {
-      "id": "e38c",
-      "username": "newUsername",
-      "email": "newuser@example.com",
-      "password": "hashedPassword"
-    },
-    {
-      "id": "9201",
-      "name": "ketan",
-      "email": "kk@g.com",
-      "password": "11111"
-    },
-    {
-      "id": "88b2",
-      "username": "newUsername",
-      "email": "newuser@example.com",
-      "password": "hashedPassword"
-    },
-    {
-      "0": {
-        "username": "newUsername",
-        "email": "newuser@example.com",
-        "password": "hashedPassword"
+  "chatRooms": {
+    "-NrETBtXnnSTPFWXCWqh": {
+      "members": {
+        "firstmemberid": "-Nr0-ZScfjYmudoZyDPz",
+        "secondmemberid": "-Nr4Gm8okBgIL0qmzL_4"
       },
-      "id": "21f7"
-    },
-    {
-      "0": {
-        "username": "newUsername",
-        "email": "test@example.com",
-        "password": "hashedPassword"
-      },
-      "id": "84f6"
-    },
-    {
-      "0": {
-        "username": "newUsername",
-        "email": "data@example.com",
-        "password": "hashedPassword"
-      },
-      "id": "6d50"
-    },
-    {
-      "id": "d97b",
-      "name": "ketan",
-      "email": "k@g.com",
-      "password": "123456"
-    },
-    {
-      "id": "3a89",
-      "name": "ketan",
-      "email": "test@g.com",
-      "password": "123456"
-    },
-    {
-      "id": "5a02",
-      "name": "test",
-      "email": "t@g.com",
-      "password": "12378"
-    },
-    {
-      "id": "1f74",
-      "name": "new-user",
-      "email": "new@g.com",
-      "password": "12345"
-    },
-    {
-      "id": "d81b",
-      "name": "test",
-      "email": "k@g.com",
-      "password": "12345"
-    }
-  ],
-  "messages": {
-    "chatRoomId1": {
-      "messageId1": {
-        "senderId": "e7c9",
-        "message": "Hello!",
-        "timestamp": 1645104000000
-      },
-      "messageId2": {
-        "senderId": "d467",
-        "message": "Hi there!",
-        "timestamp": 1645104100000
+      "messages": {
+        "-NrtceO28fjJoE2nKb-Y": {
+          "message": "hi",
+          "sender": "-Nr0-ZScfjYmudoZyDPz",
+          "timestamp": 1709290186215
+        }
       }
     },
-    "chatRoomId2": {
-      "messageId3": {
-        "senderId": "e7c9",
-        "message": "How are you?",
-        "timestamp": 1645104200000
+    "-Ns7owp_lluZTrBpMXjm": {
+      "members": {
+        "firstmemberid": "-Ns7oKL7wVS8AvGg-IGR",
+        "secondmemberid": "-Nr4Gm8okBgIL0qmzL_4"
       },
-      "messageId4": {
-        "senderId": "dd57",
-        "message": "I'm good, thanks!",
-        "timestamp": 1645104300000
+      "messages": {
+        "-Ns7oxKgjJsvwqrJN_XN": {
+          "message": "hi",
+          "sender": "-Ns7oKL7wVS8AvGg-IGR",
+          "timestamp": 1709545063569
+        },
+        "-Ns7oy3ZcK4SRPJSuFkb": {
+          "message": "yes",
+          "sender": "-Ns7oKL7wVS8AvGg-IGR",
+          "timestamp": 1709545066569
+        }
+      }
+    },
+    "-Ns7p-FO7QwmYxqhxCwy": {
+      "members": {
+        "firstmemberid": "-Ns7oKL7wVS8AvGg-IGR",
+        "secondmemberid": "-Nr0-jxYFdvLWgT0VYsO"
+      }
+    },
+    "-NsRtHn1J0Qa_aMCQB30": {
+      "members": {
+        "firstmemberid": "-Nr0-jxYFdvLWgT0VYsO",
+        "secondmemberid": "-NsRtAbYXxWGYWiTTTxN"
+      },
+      "messages": {
+        "-NsRtIPIXLkfvkVHkMoO": {
+          "message": "hi",
+          "sender": "-Nr0-jxYFdvLWgT0VYsO",
+          "timestamp": 1709881765819
+        },
+        "-NsRtKLQ0plNDHlQmsM1": {
+          "message": "hello",
+          "sender": "-Nr0-jxYFdvLWgT0VYsO",
+          "timestamp": 1709881773764
+        },
+        "-NsRtLGOuOX8KCvKS85S": {
+          "message": "fine",
+          "sender": "-NsRtAbYXxWGYWiTTTxN",
+          "timestamp": 1709881777540
+        },
+        "-NsRtLZjYbleREr0pZBm": {
+          "message": "you ",
+          "sender": "-NsRtAbYXxWGYWiTTTxN",
+          "timestamp": 1709881778778
+        },
+        "-NsRtMXAwm9NWBU45obK": {
+          "message": "good",
+          "sender": "-Nr0-jxYFdvLWgT0VYsO",
+          "timestamp": 1709881782708
+        }
+      }
+    },
+    "-NsRuGbVtxUn2Khxl-32": {
+      "members": {
+        "firstmemberid": "-Nr0-jxYFdvLWgT0VYsO",
+        "secondmemberid": "-Nr0-ZScfjYmudoZyDPz"
+      },
+      "messages": {
+        "-NsRuHcWYDiQs5CTyIm0": {
+          "message": "hi",
+          "sender": "-Nr0-ZScfjYmudoZyDPz",
+          "timestamp": 1709882024763
+        },
+        "-NsRuI_rIcZEt7NPhEKJ": {
+          "message": "yes",
+          "sender": "-Nr0-jxYFdvLWgT0VYsO",
+          "timestamp": 1709882028691
+        }
+      }
+    },
+    "-NsRuJH28VTZC5Gp6Bx8": {
+      "members": {
+        "firstmemberid": "-Nr0-ZScfjYmudoZyDPz",
+        "secondmemberid": "-Nr0-r_fRYSdCAtmlpGf"
+      }
+    },
+    "-NsRuJga3ev-xsqiwtgV": {
+      "members": {
+        "firstmemberid": "-Nr0-ZScfjYmudoZyDPz",
+        "secondmemberid": "-Nr000Rd5QYAC1tL8iVk"
+      }
+    },
+    "-NsRuKUiwRncyIsNI477": {
+      "members": {
+        "firstmemberid": "-Nr0-ZScfjYmudoZyDPz",
+        "secondmemberid": "-NrtXZq3zvj8zZhT-Tpl"
       }
     }
   },
-  "chatRooms": [
-    {
-      "chatRoomId1": {
-        "members": {
-          "e7c9": true,
-          "d467": true
-        }
-      },
-      "chatRoomId2": {
-        "members": {
-          "e7c9": true,
-          "dd57": true
-        }
-      }
+  "signupUsersList": {
+    "-Nr0-ZScfjYmudoZyDPz": {
+      "email": "h@k.com",
+      "name": "ketan",
+      "password": "11111"
+    },
+    "-Nr0-jxYFdvLWgT0VYsO": {
+      "email": "c@g.com",
+      "name": "chirag",
+      "password": "11111"
+    },
+    "-Nr0-r_fRYSdCAtmlpGf": {
+      "email": "r@v.com",
+      "name": "vishal",
+      "password": "11111"
+    },
+    "-Nr000Rd5QYAC1tL8iVk": {
+      "email": "ravi@g.com",
+      "name": "ravi",
+      "password": "12345"
+    },
+    "-Nr4Gm8okBgIL0qmzL_4": {
+      "email": "rutvik@g.com",
+      "name": "rutvik",
+      "password": "11111"
+    },
+    "-NrtXZq3zvj8zZhT-Tpl": {
+      "email": "harley@k.com",
+      "name": "satish",
+      "password": "111111"
+    },
+    "-Ns7oKL7wVS8AvGg-IGR": {
+      "email": "test@g.com",
+      "name": "mosam",
+      "password": "11111"
+    },
+    "-NsRtAbYXxWGYWiTTTxN": {
+      "email": "new@g.com",
+      "name": "new",
+      "password": "11111"
     }
-  ]
+  },
+  "userlist": {
+    "-NroioK0Fvl6PKn5jA4n": {
+      "email": "h@k.com",
+      "firstname": "test",
+      "lastname": "-database",
+      "password": "11111"
+    },
+    "-NrtHHl1zxVCPiuev_JU": {
+      "email": "h@k.com",
+      "firstname": "test",
+      "lastname": "datas",
+      "password": "11111"
+    }
+  }
 }

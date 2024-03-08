@@ -13,6 +13,14 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ## Database
 
 This project is build using `firebase realtime` database
+  ## If you want to use your firebase realtime database 
+    =>Create new web project to firebase
+    =>into the project Create realtime database 
+    =>Set rules read true and write true
+    =>into the realtime database import db.json file from this project  for datastructure 
+    =>add firebase SDK 
+    =>Go to project setting and copy firebaseconfig as npm and paste this into enviroments.ts file into firebase paste project configuration 
+  
 
 ## Angular Version
 
