@@ -1,37 +1,28 @@
-<div class="conatiner">
-  <h1>Login Form</h1>
+<div class="form-container mat-elevtion-z5">
+  <h1>Login form</h1>
   <form [formGroup]="loginForm">
-    <div class="row">
-      <div class="col">
-        <div class="form-group">
-          <label for="usr">Email:</label>
-          <input type="text" formControlName="email" [(ngModel)]="logindata.email" placeholder="Enter email"
-            class="form-control" [ngClass]="{ 'is-invalid': submitted && formcontrol['email'].errors }" />
-          <div class="form-control" *ngIf="formcontrol['email'].errors?.['required']" class="invalid-feedback">
-            Please Email is required</div>
-          <div *ngIf="formcontrol['email'].errors?.['pattern']" class="invalid-feedback">
-            Invalid email format.
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <div class="form-group">
-            <label for="usr">Password:</label>
-            <input type="password" formControlName="password" placeholder="Enter password"
-              [ngClass]="{ 'is-invalid': submitted && formcontrol['password'].errors }" class="form-control"
-              [(ngModel)]="logindata.password" />
-            <div class="form-control" *ngIf="formcontrol['password'].errors?.['required']" class="invalid-feedback">
-              Password is required</div>
-          </div>
-        </div>
-      </div>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter Email address</mat-label>
+      <input matInput formControlName="email" [(ngModel)]="logindata.email" />
+      <mat-error *ngIf="formcontrol['email']?.errors?.['required']">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="formcontrol['email']?.errors?.['pattern']">
+        Please enter a correct email format
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter Password</mat-label>
+      <input matInput formControlName="password" type="password" [(ngModel)]="logindata.password" />
+      <mat-error *ngIf="formcontrol['password']?.errors?.['required']">
+        Password is required
+      </mat-error>
+    </mat-form-field>
+    <div class="center margin-top">
+      <button mat-raised-button color="primary" (click)="login()" type="submit">
+        Login
+      </button>
     </div>
-    <br>
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
-      <hr>
-      New to Platform ?<button type="button" class="btn btn-primary" routerLink="signup">Register</button>
-    </div>
+    <span class="signup-link">New to our platform?<a routerLink="/signup">Sign-up</a></span>
   </form>
 </div>

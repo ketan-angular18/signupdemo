@@ -1,16 +1,53 @@
-.conatiner {
-  margin-left: 200px;
-  margin-right: 200px;
+.btn {
+  margin: 2px;
+}
+
+.container {
+  height: inherit;
   margin-top: 50px;
-  max-width: 750px;
-  border: 2px solid black;
-  padding: 10px;
+  width: 380px;
 }
 
-.error {
-  color: red;
+.form-container {
+  background: #eceff1;
+  border-radius: 16px;
+  display: block;
+  margin: auto;
+  max-width: 350px;
+  padding: 48px;
 }
 
-button {
-  margin-left: 10px;
+.form-container mat-form-field {
+  width: 100%;
+  margin-top: 2px;
+}
+
+.margin-top {
+  margin-top: 16px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.title {
+  text-align: center;
+}
+
+#back {
+  margin: 10px;
+}
+
+.signup-link {
+  position: absolute;
+  top: 320px;
 }

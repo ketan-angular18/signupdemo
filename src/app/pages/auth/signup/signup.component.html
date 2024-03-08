@@ -1,9 +1,16 @@
-<button mat-raised-button color="primary" id="back" (click)="back()">
-  <mat-icon>arrow_back</mat-icon> back to login
-</button>
 <div class="form-container mat-elevtion-z5">
   <h1>Sign Up a New User!</h1>
   <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Enter Name</mat-label>
+      <input matInput formControlName="name" [(ngModel)]="signupData.name" />
+      <mat-error *ngIf="controls['name']?.errors?.['required']">
+        Name is required
+      </mat-error>
+      <mat-error *ngIf="controls['name']?.errors?.['maxlength']">
+        Pleae enter a short name
+      </mat-error>
+    </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Enter Email address</mat-label>
       <input matInput formControlName="email" [(ngModel)]="signupData.email" />
@@ -39,5 +46,6 @@
         Sign Up!
       </button>
     </div>
+    <span class="login-link">Already have an account?<a routerLink="">Login</a></span>
   </form>
 </div>

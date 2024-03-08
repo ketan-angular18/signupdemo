@@ -1,2 +1,45 @@
-<h1>Welcome again</h1>
-<button class="logout_btn" (click)="logout()">Logout</button>
+<app-navbar></app-navbar>
+<div class="chat-div">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Select User You Want to chat With</mat-label>
+      <input type="text" placeholder="Pick User" aria-label="Number" matInput [formControl]="myControl"
+        [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let user of signupUsersList" [value]="user.name" (click)="selecteduser(user.key)">
+          {{ user.name }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+</div>
+<div>
+  <div class="center">
+    <div class="chat">
+      <div class="contact bar">
+        <h3>Messages</h3>
+        <hr>
+        <div class="name">
+          {{selectedUser}}
+        </div>
+      </div>
+      <div *ngIf="selectedUser !== ''" class="messages" id="chat">
+        <div *ngFor="let msg of msglist">
+          <div [ngClass]="{'sender': msg.sender === currentuserId,
+          'message': msg.sender !== currentuserId}"> {{msg.message}}</div>
+          <p [ngClass]="{'sender-time': msg.sender === currentuserId,
+          'receiver-time': msg.sender !== currentuserId}">{{msg.timestamp | date:'medium'}}</p>
+        </div>
+        <h1 class="message" *ngIf="msglist.length==0">No messages yet !!!</h1>
+      </div>
+      <form>
+        <div class="input" [formGroup]="msgform">
+          <input placeholder="Type your message here!" type="text" formControlName="msgControl" (input)="checkInput()" />
+          <button class="send-msg" [disabled]="sendbutton" (click)="sendMsg()">
+            <mat-icon class="send">send</mat-icon>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

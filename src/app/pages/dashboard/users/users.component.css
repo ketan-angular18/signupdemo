@@ -1,0 +1,17 @@
+.add-user {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.edit-btn {
+    margin-right: 0px;
+    background-color: white;
+    border: none;
+    color: rgb(38, 136, 201);
+}
+
+.delete-btn {
+    background-color: white;
+    color: red;
+    border: none;
+}

@@ -1,48 +1,55 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AuthenticationService } from 'src/app/services/authentication.service';
-import { Loginuser } from 'src/app/model/interface/loginuser';
-import { signupUsersList } from 'src/app/model/interface/loginuser';
+import { Component, OnDestroy } from '@angular/core';
+import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { catchError, tap, throwError } from 'rxjs';
+import { catchError, map, tap, throwError } from 'rxjs';
+import { Subscription } from 'rxjs';
+
+//model
+import { Loginuser } from 'src/app/model/interface/loginuser';
+
+//services
+import { AuthenticationService } from 'src/app/services/Authentication/authentication.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-sign-in',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.css'],
 })
-export class SignInComponent implements OnInit {
-  loginForm!: FormGroup;
-  submitted = false;
-  logindata!: Loginuser;
-  signupuserlist: signupUsersList[] = [];
+
+export class SignInComponent implements OnDestroy {
 
   /**
-   * @param auth for calling authentication service
-   * @param route for navigate after singin user
+   * @logindata for bind form value to loginform
+   * @loginservice for Inject service
+   * @formbuilder for inject formbuilder
+   * @route for inject router for navigation
+   * @toast for inject toastr for messages
+   * @mylogin for pass subscription
+   * @submitted for check for is submited or not 
    */
-  constructor(
-    private auth: AuthenticationService,
-    private formbuilder: FormBuilder,
-    private route: Router
-  ) {}
-  ngOnInit(): void {
-    this.logindata = new Loginuser();
-    this.loginForm = this.formbuilder.group({
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
-        ],
+  submitted = false;
+  logindata: Loginuser = new Loginuser();
+  private loginservice = inject(AuthenticationService);
+  private formbuilder = inject(FormBuilder);
+  private route = inject(Router);
+  private mylogin!: Subscription;
+  private toast = inject(ToastrService);
+  loginForm = this.formbuilder.group({
+    email: [
+      '',
+      [
+        Validators.required,
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$'),
       ],
-      password: ['', Validators.required],
-    });
-  }
+    ],
+    password: ['', Validators.required],
+  });
 
   /**
    * get formcontrol is return the cotrols of form for validation
    */
-  get formcontrol() {
+  get formcontrol()  : { [key: string]: AbstractControl } {
     return this.loginForm.controls;
   }
 
@@ -54,38 +61,43 @@ export class SignInComponent implements OnInit {
    */
   login(): void {
     if (this.loginForm.invalid) {
-      this.submitted=true
+      this.submitted = true;
       return;
     } else {
-      this.auth
-        .getUserData()
-        .pipe(
-          tap((data: signupUsersList[]) => {
-            this.signupuserlist = data;
-            const user = this.signupuserlist.find((userdata) => {
-              return (
-                userdata.email === this.logindata.email &&
-                userdata.password === this.logindata.password
-              );
-            });
-            if (user) {
-              alert('login successfully');
-              localStorage.setItem('token', 'true');
-              this.route.navigate(['dashboard/home']);
-            } else {
-              alert('invalid email and password');
-              this.loginForm.reset();
-            }
-          }),
+      this.mylogin = this.loginservice.getAllUser().snapshotChanges().pipe(
+        map((changes) =>
+          changes.map((c) => ({ key: c.payload.key, ...c.payload.val() }))))
+        .pipe(tap((data) => {
+          const user = data.find((userdata) => {
+            return (
+              userdata.email === this.logindata.email &&
+              userdata.password === this.logindata.password
+            );
+          });
+          if (user) {
+            localStorage.setItem('currentuserId', JSON.stringify(user.key))
+            this.toast.success('Login Sucess');
+            localStorage.setItem('token', 'true');
+            this.route.navigate(['dashboard/home']);
+          } else {
+            this.toast.error('invalid email and password');
+            this.loginForm.reset();
+          }
+        }),
           catchError((error) => {
-            console.error('Error during signup:', error);
-            console.error(`Error status: ${error.status}`);
-            console.error(`Error message: ${error.message}`);
-            alert('An error occurred during signup. Please try again later.');
+            console.error('Error:', error);
             return throwError(error);
-          })
-        )
-        .subscribe();
+          })).subscribe();
+    }
+  }
+
+  /**
+   * ngOnDestroy for  Unsubscribe to prevent memory leaks when the component is destroyed
+   * 
+   */
+  ngOnDestroy(): void {
+    if (this.mylogin) {
+      this.mylogin.unsubscribe();
     }
   }
 }

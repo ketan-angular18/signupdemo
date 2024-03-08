@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<button mat-raised-button color="primary" class="back" (click)="back()">
+    <mat-icon>arrow_back</mat-icon>Back
+</button>
+<div class="form-container mat-elevation-z5 text-center">
+    <h1>User Profile</h1>
+    <input #inputField type="file" hidden />
+    <form class="margin-top" [formGroup]="profileForm">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label> Name</mat-label>
+                <input [(ngModel)]="userdata.name" type="text" matInput formControlName="name" />
+                <mat-error *ngIf="controls['name']?.errors?.['required']">
+                    Name is required
+                </mat-error>
+                <mat-error *ngIf="controls['name']?.errors?.['maxlength']">
+                    Pleae enter a short name
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label> Email</mat-label>
+                <input [(ngModel)]="userdata.email" type="text" matInput formControlName="email" />
+                <mat-error *ngIf="controls['email']?.errors?.['required']">
+                    Email is required
+                </mat-error>
+                <mat-error *ngIf="controls['email']?.errors?.['email']">
+                    Please enter a correct email format
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label> Password</mat-label>
+                <input [(ngModel)]="userdata.password" type="text" matInput formControlName="password" />
+                <mat-error *ngIf="controls['password']?.errors?.['required']">
+                    Password is required
+                </mat-error>
+                <mat-error *ngIf="controls['password']?.errors?.['minlength']">
+                    Password Must be 5 Character long
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <hr>
+        <button type="submit" (click)="Submit()" class="margin-top" mat-raised-button color="primary">
+            Save my changes
+        </button>
+    </form>
+</div>

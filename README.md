@@ -2,26 +2,48 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
 
-## Development server
+## Run npm install
+
+Run `npm i ` for install node modules if not installed
+
+## Run Project
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Database
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This project is build using `firebase realtime` database
 
-## Build
+## Angular Version
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This project is build in `Angular 17`
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## About the ChatApp Project
 
-## Running end-to-end tests
+The ChatApp project is designed to facilitate one-to-one communication between users in a seamless and efficient manner. The primary goal is to provide a user-friendly platform for exchanging messages and fostering real-time conversations. Here are some key aspects of the project:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Features:
 
-## Further help
+  # One-to-One Messaging:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+        Users can engage in private conversations with each other.
+        The chat system is designed to ensure secure and personalized communication.
+
+  #  User Authentication:
+        Robust user authentication mechanisms to ensure the security and privacy of user data.
+        Each user has a unique identifier to maintain a distinct identity within the system.
+
+  # Real-Time Updates:
+
+        The chat system supports real-time updates, allowing users to receive messages instantly without the need for manual refreshing.
+ 
+  # User-Friendly Interface:
+
+    The user interface is designed for simplicity and ease of use.
+    Intuitive features to enhance the overall user experience.
+
+  # Message Timestamps:
+
+    Messages are timestamped to provide users with information about when a message was sent.
+

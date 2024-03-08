@@ -1,34 +1,124 @@
 {
   "signupUsersList": [
     {
-      "email": "bolu@gmail.com",
-      "password": "1234",
-      "id": "4c9e"
+      "id": "f54d",
+      "username": "newUsername",
+      "email": "newuser@example.com",
+      "password": "hashedPassword"
     },
     {
-      "id": "38c7",
+      "id": "e38c",
+      "username": "newUsername",
+      "email": "newuser@example.com",
+      "password": "hashedPassword"
+    },
+    {
+      "id": "9201",
+      "name": "ketan",
+      "email": "kk@g.com",
+      "password": "11111"
+    },
+    {
+      "id": "88b2",
+      "username": "newUsername",
+      "email": "newuser@example.com",
+      "password": "hashedPassword"
+    },
+    {
+      "0": {
+        "username": "newUsername",
+        "email": "newuser@example.com",
+        "password": "hashedPassword"
+      },
+      "id": "21f7"
+    },
+    {
+      "0": {
+        "username": "newUsername",
+        "email": "test@example.com",
+        "password": "hashedPassword"
+      },
+      "id": "84f6"
+    },
+    {
+      "0": {
+        "username": "newUsername",
+        "email": "data@example.com",
+        "password": "hashedPassword"
+      },
+      "id": "6d50"
+    },
+    {
+      "id": "d97b",
+      "name": "ketan",
       "email": "k@g.com",
       "password": "123456"
     },
     {
-      "id": "f561",
-      "email": "chirag@moon.com",
-      "password": "88888"
+      "id": "3a89",
+      "name": "ketan",
+      "email": "test@g.com",
+      "password": "123456"
     },
     {
-      "id": "7922",
-      "email": "c@g.com",
-      "password": "55555"
+      "id": "5a02",
+      "name": "test",
+      "email": "t@g.com",
+      "password": "12378"
     },
     {
-      "id": "d568",
-      "email": "c@g.com",
-      "password": "55555"
+      "id": "1f74",
+      "name": "new-user",
+      "email": "new@g.com",
+      "password": "12345"
     },
     {
-      "id": "bb7e",
+      "id": "d81b",
+      "name": "test",
       "email": "k@g.com",
-      "password": "55555"
+      "password": "12345"
+    }
+  ],
+  "messages": {
+    "chatRoomId1": {
+      "messageId1": {
+        "senderId": "e7c9",
+        "message": "Hello!",
+        "timestamp": 1645104000000
+      },
+      "messageId2": {
+        "senderId": "d467",
+        "message": "Hi there!",
+        "timestamp": 1645104100000
+      }
+    },
+    "chatRoomId2": {
+      "messageId3": {
+        "senderId": "e7c9",
+        "message": "How are you?",
+        "timestamp": 1645104200000
+      },
+      "messageId4": {
+        "senderId": "dd57",
+        "message": "I'm good, thanks!",
+        "timestamp": 1645104300000
+      }
+    }
+  },
+  "chatRooms": [
+    {
+      "chatRoomId1": {
+        "members": {
+          "e7c9": true,
+          "d467": true
+        }
+      },
+      "chatRoomId2": {
+        "members": {
+          "e7c9": true,
+          "dd57": true
+        }
+      }
     }
   ]
 }

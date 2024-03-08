@@ -16,13 +16,20 @@ import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatMenuModule} from '@angular/material/menu';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { environments } from 'src/environments/environments';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideToastr } from 'ngx-toastr';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
-    SignInComponent
+    SignInComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,11 +44,16 @@ import {MatMenuModule} from '@angular/material/menu';
     MatInputModule,
     BrowserAnimationsModule,
     MatBadgeModule,
-    MatMenuModule
+    MatMenuModule,
+    AngularFireModule.initializeApp(environments.firebase),
+    AngularFireDatabaseModule,
+    ToastrModule.forRoot()
   ],
   providers: [
-    provideAnimationsAsync()
-  ],
+    provideAnimationsAsync(),
+    provideAnimations(),
+    provideToastr()
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

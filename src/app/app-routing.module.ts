@@ -19,10 +19,10 @@ const routes: Routes = [
       module=>module.DashboardModule,
     )
   },
-  {
-    path:'**',
-    component:NotfoundComponent
-  }
+  // {
+  //   path:'**',
+  //   component:NotfoundComponent
+  // }
 ];
 
 @NgModule({

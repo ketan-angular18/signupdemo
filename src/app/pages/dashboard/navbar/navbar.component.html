@@ -1,0 +1,33 @@
+<mat-toolbar color="primary">
+  Moon Chat Application
+  <ng-template #loginButton>
+    <button mat-button>
+      <mat-icon>login</mat-icon>
+      Login
+    </button>
+  </ng-template>
+  <button mat-raised-button color="primary" routerLink="/dashboard/users" class="nav-btn">
+    Users
+  </button>
+  <button mat-raised-button color="primary" routerLink="/dashboard/home" class="nav-btn">
+    chats
+  </button>
+  <!-- <button mat-raised-button class="logout-btn" (click)="logout()">
+    Logout
+  </button> -->
+  <button class="logout-btn" mat-button [matMenuTriggerFor]="userMenu">
+    <img width="30" height="30" class="profile-image-toolbar"
+      [src]="'assets/images/image-placeholder.png'" />
+    <mat-icon>expand_more</mat-icon>
+  </button>
+  <mat-menu #userMenu="matMenu">
+    <button  mat-menu-item routerLink="/dashboard/profile">
+      <mat-icon>account_circle</mat-icon>
+      Profile
+    </button>
+    <button mat-menu-item (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Logout
+    </button>
+  </mat-menu>
+</mat-toolbar>

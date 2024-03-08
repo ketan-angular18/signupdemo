@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <button class="btn btn-primary add-user" routerLink="/dashboard/addusers" >Add User</button>
+    <table class="table" id="htmlData" #htmlData>
+        <thead>
+            <th>Index</th>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </thead>
+        <tbody *ngIf="userdata$ | async as users; else loading">
+            <tr *ngFor="let data of users; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ data.firstname }}</td>
+                <td>{{ data.lastname }}</td>
+                <td>{{ data.email }}</td>
+                <td class="action">
+                    <button class=" btn-primary edit-btn"
+                        (click)="editUser(data.key)"><mat-icon>edit</mat-icon></button>
+                    <button class=" btn-danger delete-btn"
+                        (click)="deleteUser(data.key)"><mat-icon>delete</mat-icon></button>
+                </td>
+            </tr>
+        </tbody>
+        <ng-template #loading>
+            <tr>
+                <td colspan="6">Loading...</td>
+            </tr>
+        </ng-template>
+    </table>
+</div>

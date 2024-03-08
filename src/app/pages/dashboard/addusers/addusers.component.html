@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<div class="conatiner">
+    <h1 *ngIf="isAddMode">Add User data</h1>
+    <h1 *ngIf="!isAddMode">Edit User data</h1>
+    <form [formGroup]="registerForm">
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="usr">FirstName:</label>
+                    <input type="text" formControlName="first_name" placeholder="Enter firstname" class="form-control"
+                        [(ngModel)]="adduser.firstname"
+                        [ngClass]="{ 'is-invalid': submitted && formcontrols['first_name'].errors }" class="form-control" />
+                    <div class="form-control" *ngIf="formcontrols['first_name'].errors?.['required']" class="invalid-feedback">
+                        Firstname is required</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="usr">LastName:</label>
+                    <input type="text" formControlName="last_name" placeholder="Enter lastname" class="form-control"
+                        [(ngModel)]="adduser.lastname" [ngClass]="{ 'is-invalid': submitted && formcontrols['last_name'].errors }"
+                        class="form-control">
+                    <div *ngIf="formcontrols['last_name'].errors?.['required']" class="invalid-feedback">Lastname is required
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+               
+                <div class="col">
+                    <div class="form-group">
+                        <label for="usr">Email:</label>
+                        <input type="text" formControlName="email" placeholder="Enter email" [(ngModel)]="adduser.email"
+                            class="form-control" [ngClass]="{ 'is-invalid': submitted && formcontrols['email'].errors }"
+                            class="form-control" />
+                        <div class="form-control" *ngIf="formcontrols['email'].errors?.['required']" class="invalid-feedback">
+                            Please Email is required</div>
+                        <div *ngIf="formcontrols['email'].errors?.['pattern']" class="invalid-feedback">
+                            Invalid email format.
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        <label for="usr">Password:</label>
+                        <input type="password" formControlName="password" placeholder="Enter password"
+                            [(ngModel)]="adduser.password" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && formcontrols['password'].errors }" class="form-control">
+                        <div *ngIf="formcontrols['password'].errors?.['required']" class="invalid-feedback"> Password is required
+                        </div>
+                        <div *ngIf="formcontrols['password'].errors?.['minlength']" class="invalid-feedback">   Password Must be 5 Character long
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <button *ngIf="isAddMode" type="submit" class="btn btn-primary"  (click)="onSubmit()" >Add</button>
+            <button *ngIf="!isAddMode" type="submit" class="btn btn-primary"  (click)="onSubmit()" >Update</button>
+            <button class="btn btn-primary" routerLink="/dashboard/users" >Cancel</button>
+        </div>
+    </form>
+</div> 
